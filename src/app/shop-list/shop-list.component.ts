@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { ProductType } from '../../assets/data';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @Component({
   selector: 'app-shop-list',
   standalone: true,
-  imports: [],
+  imports: [ProductCardComponent],
   templateUrl: './shop-list.component.html',
   styleUrl: './shop-list.component.scss',
 })
