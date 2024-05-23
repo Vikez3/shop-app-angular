@@ -1,8 +1,12 @@
 <div class="py-24">
     <div class="container px-6 mx-auto">
+        <a routerLink="shop"
+            class="bg-green-400 px-4 py-2 rounded-full text-lg text-white shrink-0 w-fit block hover:bg-green-600 transition-all ease-in-out duration-300 text-center mb-10 capitalize mx-auto">
+            Shop All Products
+        </a>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
             <a class="relative col-span-1 lg:col-span-2 hover:scale-105 transition-all ease-in-out duration-300"
-                [routerLink]="['/shop']">
+                [routerLink]="['/hats']">
                 <img src="../../assets/images/hats.webp" alt="hats" class="w-full h-full object-cover brightness-75">
                 <div class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
                     <div class="bg-white/30 backdrop-blur-sm p-4">
@@ -12,7 +16,7 @@
                 </div>
             </a>
             <a class="relative col-span-1 lg:col-span-2 hover:scale-105 transition-all ease-in-out duration-300"
-                [routerLink]="['/shop']">
+                [routerLink]="['/jackets']">
                 <img src="../../assets/images/jackets.jpg" alt="jackets"
                     class="w-full h-full object-cover brightness-75">
                 <div class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
@@ -23,7 +27,7 @@
                 </div>
             </a>
             <a class="relative col-span-1 lg:col-span-2 hover:scale-105 transition-all ease-in-out duration-300"
-                [routerLink]="['/shop']">
+                [routerLink]="['/sneakers']">
                 <img src="../../assets/images/sneakers.jpg" alt="sneakers"
                     class="w-full h-full object-cover brightness-75">
                 <div class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
@@ -34,7 +38,7 @@
                 </div>
             </a>
             <a class="relative col-span-1 lg:col-span-3 hover:scale-105 transition-all ease-in-out duration-300"
-                [routerLink]="['/shop']">
+                [routerLink]="['/womans']">
                 <img src="../../assets/images/woman-banner.jpg" alt="womans"
                     class="w-full h-full object-cover brightness-75">
                 <div class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
@@ -45,12 +49,12 @@
                 </div>
             </a>
             <a class="relative col-span-1 lg:col-span-3 hover:scale-105 transition-all ease-in-out duration-300"
-                [routerLink]="['/shop']">
-                <img src="../../assets/images/man-banner.jpg" alt="mans"
+                [routerLink]="['/mens']">
+                <img src="../../assets/images/man-banner.jpg" alt="mens"
                     class="w-full h-full object-cover brightness-75">
                 <div class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
                     <div class="bg-white/30 backdrop-blur-sm p-4">
-                        <h3 class="text-xl md:text-2xl text-center">MANS</h3>
+                        <h3 class="text-xl md:text-2xl text-center">MENS</h3>
                         <button class="block mx-auto">Shop Now</button>
                     </div>
                 </div>

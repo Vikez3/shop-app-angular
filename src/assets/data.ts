@@ -6,6 +6,14 @@ export interface ProductType {
   productType: string;
 }
 
+export const AllProductTypes: string[] = [
+  'hats',
+  'jackets',
+  'sneakers',
+  'mens',
+  'womans',
+];
+
 export const Products: ProductType[] = [
   {
     imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',

@@ -1,0 +1,6 @@
+<section class="py-24">
+    <div class="container mx-auto px-6">
+        <app-products-list *ngIf="products && products.length > 0" [productType]="productType" [products]="products"
+            [productsLength]='products.length'></app-products-list>
+    </div>
+</section>

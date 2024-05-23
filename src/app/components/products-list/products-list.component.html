@@ -1,0 +1,9 @@
+<div>
+    <a [routerLink]="['/', productType]"
+        class="block mb-5 text-2xl sm:text-3xl lg:text-4xl uppercase font-medium">{{productType}}</a>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <app-product-card *ngFor="let product of products | slice:0:productsLength"
+            [product]="product"></app-product-card>
+    </div>
+   
+</div>
