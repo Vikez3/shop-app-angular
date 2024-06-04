@@ -1,12 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ProductType } from '../../../assets/data';
-import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { ProductType } from '../../../assets/data';
+import { CartService } from '../../services/cart.service';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
 })
@@ -16,7 +18,8 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +31,6 @@ export class ProductDetailComponent implements OnInit {
           (data) => {
             if (data) {
               this.product = data;
-              console.log(data);
             } else {
               console.log('Product not found');
             }
@@ -40,6 +42,14 @@ export class ProductDetailComponent implements OnInit {
       } else {
         console.log('No product ID provided');
       }
+    });
+  }
+
+  addProduct(): void {
+    const newProduct: ProductType = this.product;
+
+    this.cartService.setProducts(newProduct).subscribe((products) => {
+      console.log('Updated products:', products);
     });
   }
 }

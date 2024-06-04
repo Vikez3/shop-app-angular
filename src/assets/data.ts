@@ -4,6 +4,7 @@ export interface ProductType {
   name: string;
   price: number;
   productType: string;
+  quantity?: number;
 }
 
 export const AllProductTypes: string[] = [
