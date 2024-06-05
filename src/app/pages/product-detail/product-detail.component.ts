@@ -1,25 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductType } from '../../../assets/data';
 import { CartService } from '../../services/cart.service';
+import { Location } from '@angular/common';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
 })
 export class ProductDetailComponent implements OnInit {
   product!: ProductType;
   idParam!: number;
+  popupVisible: boolean = false;
 
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -47,9 +50,13 @@ export class ProductDetailComponent implements OnInit {
 
   addProduct(): void {
     const newProduct: ProductType = this.product;
-
-    this.cartService.setProducts(newProduct).subscribe((products) => {
-      console.log('Updated products:', products);
-    });
+    this.cartService.setProducts(newProduct);
+    this.popupVisible = true;
+  }
+  goBack(): void {
+    this.location.back();
+  }
+  closePopup(): void {
+    this.popupVisible = false;
   }
 }

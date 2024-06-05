@@ -1,9 +1,11 @@
-<nav>
-    <div class="container navbar-container flex justify-between px-6">
+<nav class="absolute top-0 left-0 right-0 w-full z-50">
+    <div class="container navbar-container flex justify-between items-center px-6">
         <div>
-            <a class="nav-logo" [routerLink]="['/']">LOGO</a>
+            <a class="nav-logo" [routerLink]="['/']">
+                <img src="../../../assets/images/shop-high-resolution-logo-black-transparent.png" alt="logo"
+                    class="block w-12 sm:w-14 h-auto"></a>
         </div>
-        <ul class="flex gap-5">
+        <ul class="flex gap-5 text-lg lg:text-xl font-medium">
             <li>
                 <a class="nav-link" [routerLink]="['/shop']">Shop</a>
             </li>

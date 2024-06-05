@@ -49,8 +49,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   scroll-behavior: smooth;
+  padding-top: 96px;
 }
 a,
 button {
   cursor: pointer;
+}
+section {
+  min-height: 100vh;
 }

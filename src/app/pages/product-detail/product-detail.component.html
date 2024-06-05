@@ -1,4 +1,4 @@
-<section class="py-24">
+<section class="py-24 relative">
     <div class="container mx-auto px-6">
         <div class="grid md:grid-cols-2 lg:gap-12 gap-6 max-w-5xl mx-auto">
             <img src={{product.imageUrl}} alt={{product.name}} class="w-full h-auto block">
@@ -18,6 +18,25 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <div *ngIf="popupVisible" class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full ">
+        <div class="w-full h-full flex items-center justify-center relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-black/60" (click)="closePopup()"></div>
+
+            <div class="min-w-72 max-w-sm bg-white border p-5 relative">
+                <div class="flex items-center gap-4 flex-col">
+                    <button (click)="goBack()"
+                        class="bg-red-600 px-4 py-2 rounded-full text-lg text-white shrink-0 block hover:bg-red-400 transition-all ease-in-out duration-300 w-full text-center">
+                        Continue Shopping
+                    </button>
+                    <a [routerLink]="['/cart']"
+                        class="bg-green-400 px-4 py-2 rounded-full text-lg text-white shrink-0 block hover:bg-green-600 transition-all ease-in-out duration-300 w-full text-center">
+                        Go To Cart
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
